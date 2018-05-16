@@ -18,23 +18,13 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1 class="text-center my-4">Listagem de produtos</h1>
         <div class="container">
-        <table class="table table-bordered table-striped">
-            <?php foreach ($produtos as $p): ?>
-                <tr>
-                <td><?= $p->nome ?></td>
-                <td><?= $p->valor ?></td>
-                <td><?= $p->descricao ?></td>
-                <td class="text-center"><?= $p->quantidade ?></td>
-                <td class="text-center">
-                  <a href="/produtos/mostra/<?=$p->id?>">
-                    <i class="fas fa-search"></i>
-                  </a>
-                </td>
-                </tr>
-            <?php endforeach ?>
-        </table>
-      </div>
+          <h1>Detalhes do produto <?=$p->nome?></h1>
+          <ul>
+            <li>Valor: <?=$p->valor?></li>
+            <li>Descrição: <?=$p->descricao?></li>
+            <li>Quantidade: <?=$p->quantidade?></li>
+          </ul>
+        </div>
     </body>
 </html>
