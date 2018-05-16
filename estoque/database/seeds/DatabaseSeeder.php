@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -20,14 +20,21 @@ class DatabaseSeeder extends Seeder
 class ProdutoTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-      DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)', array('Geladeira', 2, 110, 'Side by Side com gelo na porta'));
-      DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)', array('Fogão', 5, 100, 'Painel automático e forno elétrico'));
-      DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)', array('Microondas', 1, 152, 'Manda SMS quando termina de esquentar'));
+
+        DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)', array('Geladeira', 2, 150.00, 'Side by Side com gelo na porta'));
+
+        DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)',
+        array('Fogão', 5, 10.00, 'Painel automático e forno elétrico'));
+
+        DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)',
+        array('Microondas', 1, 60.00, 'Manda SMS quando termina de esquentar'));
+
+        // $this->call(UsersTableSeeder::class);
     }
 }
